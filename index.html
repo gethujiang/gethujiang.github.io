@@ -297,6 +297,149 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/08/hydra中文说明/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JS">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/js.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JS">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/08/hydra中文说明/" itemprop="url">hydra中文说明</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-08T11:51:04+08:00">
+                2018-06-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>中文使用说明(转):<br>-R 继续从上一次进度接着破解<br>-S 采用SSL链接<br>-s PORT 如果非默认端口，可通过这个参数指定<br>-l LOGIN 小写，用于指定破解的用户，对特定用户破解<br>-L FILE 大写，用于指定用户的用户名字典<br>-p PASS 小写，用于指定密码破解，少用，一般是采用密码字典<br>-P FILE 大写，用于指定密码字典<br>-e ns 额外的选项，n：空密码试探，s：使用指定账户和密码试探<br>-C FILE 使用冒号分割格式 例如 “登录名:密码”来代替-L/-P参数<br>-M FILE 指定目标列表文件一行一条<br>-o FILE 指定结果输出文件<br>-f 找到第一对登录名或者密码的时候中止破解<br>-t TASKS 同时运行的线程数，默认为16<br>-w TIME 设置最大超时的时间，单位秒，默认是30s<br>-v / -V 显示详细过程<br>server 目标ip<br>service 指定服务名，支持的服务跟协议有: telnet ftp pop3[-ntlm] imap[-ntlm] smb smbnt http-{head|get} http-{get|post}-form http-proxy cisco cisco-enable vnc ldap2 ldap3 mssql mysql oracle-listener postgres nntp socks5 rexec rlogin pcnfs snmp rsh cvs svn icq sapr3 ssh2 smtp-auth[-ntlm] pcanywhere teamspeak sip vmauthd firebird ncp afp<br>HYDRA_PROXY_HTTP 变量参数可以用来定义代理服务器(只能使用http代理)<br>语法:<br>HYDRA_PROXY_HTTP=”<a href="http://ip:port/&quot;" target="_blank" rel="noopener">http://ip:port/&quot;</a><br>HYDRA_PROXY_CONNECT=ip:8000<br>如果你使用的代理需要用户名和密码，请使用HYDRA_PROXY_AUTH 变量参数:<br>HYDRA_PROXY_AUTH=”the_login:the_password”</p>
+<p>1.破解ftp<br>hydra ip ftp -l 用户名 -P 密码字典 -t 线程(默认16) -vV<br>hydra ip ftp -l 用户名 -P 密码字典 -e ns -vV<br>2.get方式提交 破解web登录<br>hydra -l 用户名 -p 密码字典 -t 线程 -vV -e ns ip http-get /web/<br>hydra -l 用户名 -p 密码字典 -t 线程 -vV -e ns -f ip http-get /web/index.asp<br>3.破解ssh<br>hydra -l 用户名 -p 密码字典 -t 线程 -e ns ip ssh<br>hydra -l 用户名 -p 密码字典 -t 线程 -o save.log ip ssh<br>4.破解teamspeak<br>hydra -l 用户名 -P 密码字典 -s 端口号 -vV ip teamspeak<br>5.post方式提交 破解web登录<br>hydra -l 用户名 -P 密码字典 -s 80 ip http-post-form “/admin/login.php:username=^USER^&amp;password=^PASS^&amp;submit=login:sorry password”<br>6.cisco<br>hydra -P pass.txt 192.168.1.229 cisco<br>hydra -m cloud -P pass.txt 192.168.1.229 cisco-enable<br>7.smb<br>hydra -l administrator -P pass.txt 192.168.0.141 smb<br>8.pop3<br>hydra -l muts -P pass.txt my.pop3.mail pop3<br>9.https<br>hydra -m /index.php -l muts -P pass.txt 192.168.0.12 https<br>10.rdp<br>hydra ip rdp -l administrator -P pass.txt -V<br>11.http-proxy<br>hydra -l admin -P pass.txt http-proxy://192.168.0.1<br>12.imap<br>hydra -L user.txt -p secret 192.168.0.1 imap PLAIN<br>hydra -C defaults.txt -6 imap://[fe80::2c:31ff:fe12:ac11]:143/PLAIN<br>13.telnet<br>hydra ip telnet -l 用户 -P 密码字典 -t 32 -s 23 -e ns -f -V<br>14.http:<br>hydra -L list_user -P list_password 192.168.56.101 http-post-form “/dvwa/login.php:username=^USER^&amp;password=^PASS^&amp;Login=Login:Login failed” -V</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/08/kali/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -604,12 +747,21 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
             
 
             
