@@ -297,6 +297,139 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/24/linux基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JS">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/js.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/24/linux基础/" itemprop="url">linux基础</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-24T21:34:06+08:00">
+                2018-09-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Linux基础<br>1）Linux系统信息<br>1.Linux的特点<br>　　Linux操作系统是一个免费、自由、开放的操作系统，它拥有如下一些特点：完全免费、高效安全稳定、支持多种硬件平台、友好的用户界面、强大的网络功能、支持多任务、多用户。<br>　　Linux的体系结构<br>　　Linux操作系统一般由以下3个主要部分组成： 内核（Kernel）、命令解释层（Shell或其他操作环境）、实用工具<br>2.Linux的内核<br>　　系统的心脏，运行程序和管理像磁盘和打印机等硬件设备的核心程序。<br>　　其源代码主要用C语言编写，通常安装在/usr/src目录。<br>　　采用模块化结构，包括：存储管理、CPU和进程管理、文件系统管理、设备管理和驱动、网络通信以及系统的引导、系统调用等。<br>　　Linux允许用户根据自己机器的实际配置定制Linux的内核。 用户在安装Linux后可以下载最新版本的Linux内核，进行内核编译后升级计算机的内核，就可以使用到内核最新的功能。<br>3.Linux Shell<br>　　Shell（命令解释器）<br>　　是系统的用户界面，提供用户与内核进行交互操作的接口。<br>　　它接收用户输入的命令，并且把它送入内核去执行。<br>　　操作环境<br>　　在操作系统内核与用户之间提供操作界面，它可以描述为一个解释器。操作系统对用户输入的命令进行解释，再将其发送到内核。Linux拥有桌面（desktop）、窗口管理器（window manager）和命令行shell（command line shell）等几种操作环境。<br>　　Shell的版本<br>　　Bourne Shell：是贝尔实验室开发的版本。<br>　　BASH：是GNU的Bourne Again Shell，是GNU操作系统上默认的Shell。<br>　　Korn Shell：是对Bourne Shell的发展，在大部分情况下与Bourne Shell兼容。<br>　　C shell：是SUN公司Shell的BSD版本。<br>4.tips：<br>查看版本信息：uname -a  cat /proc/version   cat /etc/issue<br>显示机器的处理器架构：arch<br>显示机器的处理器架构：uname -m<br>显示正在使用的内核版本：uname -r<br>显示硬件系统部件 - (SMBIOS / DMI)：dmidecode -q<br>显示CPU info的信息 ：cat /proc/cpuinfo<br>显示中断 ：cat /proc/interrupts<br>校验内存使用 ：cat /proc/meminfo<br>cat /proc/swaps 显示哪些swap被使用<br>cat /proc/version 显示内核的版本<br>cat /proc/net/dev 显示网络适配器及统计<br>cat /proc/mounts 显示已加载的文件系统<br>罗列 PCI 设备 ：lspci -tv<br>显示 USB 设备 ：lsusb -tv<br>显示系统日期 ：date<br>date 041217002007.00 设置日期和时间 - 月日时分年.秒<br>clock -w 将时间修改保存到 BIOS<br>2）Linux系统启动登录<br>1.文件类型<br>　　普通文件（regular file）：就是一般存取的文件，由ls -al显示出来的属性中，第一个属性为 [-]，例如 [-rwxrwxrwx]。另外，依照文件的内容，又大致可以分为：<br>　　1、纯文本文件（ASCII）：这是Unix系统中最多的一种文件类型，之所以称为纯文本文件，是因为内容可以直接读到的数据，例如数字、字母等等。设置文件几乎都属于这种文件类型。举例来说，使用命令“cat ~/.bashrc”就可以看到该文件的内容（cat是将文件内容读出来）。<br>　　2、二进制文件（binary）：系统其实仅认识且可以执行二进制文件（binary file）。Linux中的可执行文件（脚本，文本方式的批处理文件不算）就是这种格式的。举例来说，命令cat就是一个二进制文件。<br>　　3、数据格式的文件（data）：有些程序在运行过程中，会读取某些特定格式的文件，那些特定格式的文件可以称为数据文件（data file）。举例来说，Linux在用户登入时，都会将登录数据记录在 /var/log/wtmp文件内，该文件是一个数据文件，它能通过last命令读出来。但使用cat时，会读出乱码。因为它是属于一种特殊格式的文件。<br>目录文件（directory）：就是目录，第一个属性为 [d]，例如 [drwxrwxrwx]。<br>连接文件（link）：类似Windows下面的快捷方式。第一个属性为 [l]，例如 [lrwxrwxrwx]。<br>设备与设备文件（device）：与系统外设及存储等相关的一些文件，通常都集中在 /dev目录。通常又分为两种：<br>块设备文件：就是存储数据以供系统存取的接口设备，简单而言就是硬盘。例如一号硬盘的代码是 /dev/hda1等文件。第一个属性为 [b]。<br>字符设备文件：即串行端口的接口设备，例如键盘、鼠标等等。第一个属性为 [c]。<br>套接字（sockets）：这类文件通常用在网络数据连接。可以启动一个程序来监听客户端的要求，客户端就可以通过套接字来进行数据通信。第一个属性为 [s]，最常在 /var/run目录中看到这种文件类型。<br>管道（FIFO,pipe）：FIFO也是一种特殊的文件类型，它主要的目的是，解决多个程序同时存取一个文件所造成的错误。FIFO是first-in-first-out（先进先出）的缩写。第一个属性为 [p]。<br>2.文件结构<br>　　/：根目录，所有的目录、文件、设备都在/之下，/就是Linux文件系统的组织者，也是最上级的领导者。<br>　　/bin：bin 就是二进制（binary）英文缩写。在一般的系统当中，都可以在这个目录下找到linux常用的命令。系统所需要的那些命令位于此目录。<br>　　/boot：Linux的内核及引导系统程序所需要的文件目录，比如 vmlinuz initrd.img 文件都位于这个目录中。在一般情况下，GRUB或LILO系统引导管理器也位于这个目录。<br>　　/cdrom：这个目录在刚刚安装系统的时候是空的。可以将光驱文件系统挂在这个目录下。例如：mount /dev/cdrom /cdrom<br>　　/dev：dev 是设备（device)的英文缩写。这个目录对所有的用户都十分重要。因为在这个目录中包含了所有linux系统中使用的外部设备。但是这里并不是放的外部设备的驱动程序。这一点和常用的windows,dos操作系统不一样。它实际上是一个访问这些外部设备的端口。可以非常方便地去访问这些外部设备，和访问一个文件，一个目录没有任何区别。<br>　　/etc：etc这个目录是linux系统中最重要的目录之一。在这个目录下存放了系统管理时要用到的各种配置文件和子目录。要用到的网络配置文件，文件系统，x系统配置文件，设备配置信息，设置用户信息等都在这个目录下。<br>　　/home：如果建立一个用户，用户名是”xx”,那么在/home目录下就有一个对应的/home/xx路径，用来存放用户的主目录。<br>　　/lib：lib是库（library）英文缩写。这个目录是用来存放系统动态连接共享库的。几乎所有的应用程序都会用到这个目录下的共享库。因此，千万不要轻易对这个目录进行什么操作，一旦发生问题，系统就不能工作了。<br>　　/lost+found：在ext2或ext3文件系统中，当系统意外崩溃或机器意外关机，而产生一些文件碎片放在这里。当系统启动的过程中fsck工具会检查这里，并修复已经损坏的文件系统。有时系统发生问题，有很多的文件被移到这个目录中，可能会用手工的方式来修复，或移到文件到原来的位置上。<br>　　/mnt：这个目录一般是用于存放挂载储存设备的挂载目录的，比如有cdrom等目录。可以参看/etc/fstab的定义。<br>　　/media：有些linux的发行版使用这个目录来挂载那些usb接口的移动硬盘（包括U盘）、CD/DVD驱动器等等。<br>　　/opt：这里主要存放那些可选的程序。<br>　　/proc：可以在这个目录下获取系统信息。这些信息是在内存中，由系统自己产生的。<br>　　/root：Linux超级权限用户root的家目录。<br>　　/sbin：这个目录是用来存放系统管理员的系统管理程序。大多是涉及系统管理的命令的存放，是超级权限用户root的可执行命令存放地，普通用户无权限执行这个目录下的命令，这个目录和/usr/sbin; /usr/X11R6/sbin或/usr/local/sbin目录是相似的，凡是目录sbin中包含的都是root权限才能执行的。<br>　　/selinux ：对SElinux的一些配置文件目录，SElinux可以让linux更加安全。<br>　　/srv 服务启动后，所需访问的数据目录，举个例子来说，www服务启动读取的网页数据就可以放在/srv/www中<br>    /tmp：临时文件目录，用来存放不同程序执行时产生的临时文件。有时用户运行程序的时候，会产生临时文件。/tmp就用来存放临时文件的。/var/tmp目录和这个目录相似。<br>　　/usr这是linux系统中占用硬盘空间最大的目录。用户的很多应用程序和文件都存放在这个目录下。在这个目录下，可以找到那些不适合放在/bin或/etc目录下的额外的工具<br>　　/usr/local：这里主要存放那些手动安装的软件，即不是通过“新立得”或apt-get安装的软件。它和/usr目录具有相类似的目录结构。让软件包管理器来管理/usr目录，而把自定义的脚本（scripts)放到/usr/local目录下面、。<br>　　/usr/share ：系统共用的东西存放地，比如 /usr/share/fonts 是字体目录，/usr/share/doc和/usr/share/man帮助文件。<br>　　/var：这个目录的内容是经常变动的，看名字就知道，可以理解为vary的缩写，/var下有/var/log 这是用来存放系统日志的目录。/var/ www目录是定义Apache服务器站点存放目录；/var/lib 用来存放一些库文件，比如MySQL的，以及MySQL数据库的的存放地。<br>3.tips：<br>注销：Log out<br>账号设置：Account settings<br>关闭系统：shutdown -h now<br>关闭系统：init 0<br>关闭系统 ：telinit 0<br>按预定时间关闭系统 ：shutdown -h hours:minutes &amp;<br>取消按预定时间关闭系统 ：shutdown -c<br>重启：shutdown -r now<br>重启：reboot<br>注销 ：logout<br>查看文件：ls -l<br>进入根目录：cd /<br>3）Linux基本命令使用<br>1.Linux系统的终端窗口<br>　　字符终端为用户提供了一个标准的命令行接口，在字符终端窗口中，会显示一个Shell提示符，通常为$。<br>　　用户可以在提示符后输入带有选项和参数的字符命令，并能够在终端窗口中看到命令的运行结果，此后，将会出现一个新的提示符，标志着新命令行的开始。<br>　　字符终端窗口中出现的Shell提示符因用户不同而有所差异，普通用户的命令提示符为“$”，超级管理员用户的命令提示符为“#”。<br>　　在Linux系统中命令区分大小写。<br>2.Linux命令基础<br>　　在命令行中，可以使用Tab键来自动补齐命令，即可以只输入命令的前几个字母，然后按Tab键，系统将自动补齐该命令，若命令不止一个，则显示出所有和输入字符相匹配的命令<br>　　按Tab键时，如果系统只找到一个和输入字符相匹配的目录或文件，则自动补齐；如果没有匹配的内容或有多个相匹配的名字，系统将发出警鸣声，再按一下Tab键将列出所有相匹配的内容，以供用户选择。<br>　　利用向上或向下的光标键，可以翻查曾经执行过的历史命令。<br>　　如果要在一个命令行上输入和执行多条命令，可以使用分号来分隔命令。<br>    要使程序以后台方式执行，只需在要执行的命令后跟上一个“&amp;”符号即可。<br>3.cd命令<br>　　cd命令用来切换工作目录至dirname。 其中dirName表示法可为绝对路径或相对路径。若目录名称省略，则变换至使用者的home directory(也就是刚login时所在的目录)。另外，~也表示为home directory的意思，.则是表示目前所在的目录， ..则表示目前目录位置的上一层目录。<br>4.ls命令<br>　　ls命令用来显示目标列表，在Linux中是使用率较高的命令。ls命令的输出信息可以进行彩色加亮显示，以分区不同类型的文件。<br>5.mv命令<br>　　mv命令用来对文件或目录重新命名，或者将文件从一个目录移到另一个目录中。source表示源文件或目录，target表示目标文件或目录。如果将一个文件移到一个已经存在的目标文件中，则目标文件的内容将被覆盖。 mv命令可以用来将源文件移至一个目标文件中，或将一组文件移至一个目标目录中。源文件被移至目标文件有两种不同的结果：<br>如果目标文件是到某一目录文件的路径，源文件会被移到此目录下，且文件名不变。<br>如果目标文件不是目录文件，则源文件名（只能有一个）会变为此目标文件名，并覆盖己存在的同名文件。如果源文件和目标文件在同一个目录下，mv的作用就是改文件名。当目标文件是目录文件时，源文件或目录参数可以有多个，则所有的源文件都会被移至目标文件中。所有移到该目录下的文件都将保留以前的文件名。<br>6.mkdir命令<br>　　mkdir命令用来创建目录。该命令创建由dirname命名的目录。<br>7.rmdir命令<br>　　rmdir命令用来删除空目录。当目录不再被使用时，或者磁盘空间已到达使用限定值，就需要删除失去使用价值的目录。<br>8.rm命令<br>　　rm命令可以删除一个目录中的一个或多个文件或目录，也可以将某个目录及其下属的所有文件及其子目录均删除掉。对于链接文件，只是删除整个链接文件，而原有文件保持不变。<br>9.cp命令<br>　　cp命令用来将一个或多个源文件或者目录复制到指定的目的文件或目录。<br>10.tips：<br>查看当前路径：pwd<br>查看文件内容：cat，more（more 仅能向前移动，却不能向后移动），less，tail，head<br>创建文件：vi (使用命令回车后输入：i(插入文字)，输入如图内容后，按Esc后输入：:wq(保存退出)<br>查看进程：ps<br>查看网卡信息：ifconfig<br>查看网络连通情况：ping ip-address<br>历史命令的查看:history<br>4)linux用户和组管理<br>1.linux系统下的用户账户分为两种：<br>普通用户账户和超级用户账户<br>2.普通用户账户<br>　　超级用户账户（root）：又称为根用户或管理员账户，可以对普通用户和整个系统进行管理。<br>　　组群是具有相同特性的用户的逻辑集合，使用组群有利于系统管理员按照用户的特性组织和管理用户，提高工作效率。在为资源授权时可以把权限赋予某个组群，组群中的成员即可自动获得这种权限。一个用户账户至少属于一个用户组，当是多个组群的成员时，其中某个组群是该用户的主组群（私有组群），其他组群是该用户的附属组群（标准组群）。每一个用户都有一个唯一的身份标识，成为用户ID（UID）；每一个用户组也有一个唯一的身份标识，成为用户组ID（GID）。root用户的UID为0。<br>　　普通用户的UID可以再创建时由管理员指定，如果不指定，用户的UID默认从500开始顺序编号。<br>　　用户账户文件：<br>        /etc/passwd文件：用户账户信息<br>        /etc/shadow文件：用户口令<br>　　组群文件：<br>        /etc/group文件：组群账户信息<br>        /etc/gshadow文件：组群口令、管理员等管理信息<br>        /etc/login.defs文件<br>3.Linux的用户的管理<br>　　用户账号的管理主要涉及到用户账号的添加、删除和修改。添加用户账号就是在系统中创建一个新账号，然后为新账号分配用户号、用户组、主目录和登录Shell等资源。刚添加的账号是被锁定的，无法使用。添加新的用户账号使用useradd命令，语法如下：<br>　　useradd 选项 用户名<br>　　其中各选项含义如下：<br>        -c comment。指定一段注释性描述。<br>        -d 目录。指定用户主目录，如果此目录不存在，则同时使用-m选项，能创建主目录。<br>        -g 用户组。指定用户所属的用户组。<br>        -G 用户组,用户组。指定用户所属的附加组。<br>        -s Shell文件。指定用户的登录Shell。<br>        -u 用户号。指定用户的用户号，如果同时有-o选项，则能重复使用其他用户的标识号。<br>        -p这个命令是需求提供md5码的加密口令，普通数字是不行的。<br>4.Linux用户口令的管理<br>　　用户管理的一项重要内容是用户口令的管理。用户账号刚创建时没有口令，是被系统锁定的，无法使用，必须为其指定口令后才能使用，即使是空口令。<br>　　指定和修改用户口令的Shell命令是passwd。终极用户能为自己和其他用户指定口令，普通用户只能修改自己的口令。命令的格式为：<br>　　代码:<br>　　passwd 选项 用户名<br>　　可使用的选项：<br>        -l 锁定口令，即禁用账号。<br>        -u 口令解锁。<br>        -d 使账号无口令。<br>        -f 强迫用户下次登录时修改口令。<br>　　如果默认用户名，则修改当前用户的口令。<br>5.tips：<br>命令查看group文件：cat /etc/group<br>root:x:0:         组名：密码：GID：User_list<br>组名：组的名称，默认同名用户名<br>密码: 组的密码占位符，用于用户临时切换至需要的组以获取相应权限，可以使用newgrp GROUP_NAME切换<br>GID：组的全局识别号<br>User_list：隶属此组的用户，多个用户使用”,”隔开</p>
+<p>命令查看gshadow文件：cat /etc/gshadow<br>root:$6$PLRAi/Z/svr$PRelPtvLuGJqvFG3D8fbjYHDho2RQUe93glO.::        组名：密码：组管理者：User_list<br>组名：组的名称，同步/etc/group文件中<br>密码：第一个$后面表示加密算法，第二个$后面表示加密的密码<br>组管理者：可以对此组成员有操作权限，如果有多个，可以用逗号隔开<br>User_list： 用户的列表，如果有多个，可以使用逗号隔开</p>
+<p>查看当前用户：whoami<br>切换用户：su 用户名</p>
+<p>5）文件管理<br>(1)cd命令<br>　　cd命令用来切换工作目录至dirname。<br>(2)ls命令<br>　　ls命令用来显示目标列表，在Linux中是使用率较高的命令。ls命令的输出信息可以进行彩色加亮显示，以分区不同类型的文件。<br>(3)mkdir命令<br>　　mkdir命令用来创建目录。<br>(4)rmdir命令<br>　　rmdir命令用来删除空目录。<br>(5)mv命令<br>　　mv命令用来对文件或目录重新命名，或者将文件从一个目录移到另一个目录中。source表示源文件或目录，target表示目标文件或目录。<br>(6)cp命令<br>    cp对文件进行复制，<br>(7)tips<br>cd ..:进入上层目录<br>cd ~root:进入root目录<br>cd -:进入根目录<br>cp -a /tmp/dir1 .  ：复制/tmp/dir1目录到当前工作目录<br>6）文件搜索<br>1.find命令<br>　　find命令用来在指定目录下查找文件。<br>2.whereis命令<br>　　whereis命令用来定位指令的二进制程序、源代码文件和man手册页等相关文件的路径。<br>3.locate命令和slocate命令<br>　　locate命令和slocate命令都用来查找文件或目录。 locate命令其实是find -name的另一种写法，但是要比后者快得多，原因在于它不搜索具体目录，而是搜索一个数据库/var/lib/locatedb，这个数据库中含有本地所有文件信息。Linux系统自动创建这个数据库，并且每天自动更新一次，所以使用locate命令查不到最新变动过的文件。为了避免这种情况，可以在使用locate之前，先使用updatedb命令，手动更新数据库。<br>4.which命令<br>　　which命令用于查找并显示给定命令的绝对路径，环境变量PATH中保存了查找命令时需要遍历的目录。<br>5.tips<br>搜索在过去1天内未被使用过的执行文件<br>命令：find /usr/bin/ -type f -atime +1</p>
+<p>Linux操作系统加固</p>
+<ol>
+<li>账号和口令<br>1.1 禁用或删除无用账号<br>减少系统无用账号，降低安全风险。<br>操作步骤<br>使用命令 userdel &lt;用户名&gt; 删除不必要的账号。<br>使用命令 passwd -l &lt;用户名&gt; 锁定不必要的账号。<br>使用命令 passwd -u &lt;用户名&gt; 解锁必要的账号。<br>1.2 检查特殊账号<br>检查是否存在空口令和root权限的账号。<br>操作步骤<br><strong>查看空口令和root权限账号，确认是否存在异常账号：<br>使用命令 awk -F: ‘($2==””)’ /etc/shadow 查看空口令账号。<br>使用命令 awk -F: ‘($3==0)’ /etc/passwd 查看UID为零的账号。
+</strong>加固空口令账号：<br>使用命令 passwd &lt;用户名&gt; 为空口令账号设定密码。<br>确认UID为零的账号只有root账号。<br>1.3 添加口令策略<br>加强口令的复杂度等，降低被猜解的可能性。<br>操作步骤<br><strong>使用命令 vi /etc/login.defs 修改配置文件。<br>PASS_MAX_DAYS 90 #新建用户的密码最长使用天数<br>PASS_MIN_DAYS 0 #新建用户的密码最短使用天数<br>PASS_WARN_AGE 7 #新建用户的密码到期提前提醒天数
+</strong>使用chage命令修改用户设置。<br>例如，chage -m 0 -M 30 -E 2000-01-01 -W 7 &lt;用户名&gt;表示将此用户的密码最长使用天数设为30，最短使用天数设为0，密码2000年1月1日过期，过期前七天警告用户。<br><strong>设置连续输错三次密码，账号锁定五分钟。使用命令 vi /etc/pam.d/common-auth修改配置文件，在配置文件中添加 auth required pam_tally.so onerr=fail deny=3 unlock_time=300。<br>1.4 限制用户su<br>限制能su到root的用户。<br>操作步骤<br>使用命令 vi /etc/pam.d/su修改配置文件，在配置文件中添加行。例如，只允许test组用户su到root，则添加 auth required pam_wheel.so group=test。<br>1.4 禁止root用户直接登录<br>限制root用户直接登录。<br>操作步骤
+</strong>创建普通权限账号并配置密码,防止无法远程登录;<br>**使用命令 vi /etc/ssh/sshd_config修改配置文件将PermitRootLogin的值改成no，并保存，然后使用service sshd restart重启服务。</li>
+<li>服务<br>2.1 关闭不必要的服务<br>关闭不必要的服务（如普通服务和xinetd服务），降低风险。<br>2.2 SSH服务安全<br>对SSH服务进行安全加固，防止暴力破解成功。<br>操作步骤<br>使用命令 vim /etc/ssh/sshd_config 编辑配置文件。<br>不允许root账号直接登录系统。<br>设置 PermitRootLogin 的值为 no。<br>修改SSH使用的协议版本。<br>设置 Protocol 的版本为 2。<br>修改允许密码错误次数（默认6次）。<br>设置 MaxAuthTries 的值为 3。</li>
+<li>文件系统<br>3.1 设置umask值<br>设置默认的umask值，增强安全性。<br>操作步骤<br>使用命令 vi /etc/profile 修改配置文件，添加行 umask 027， 即新创建的文件属主拥有读写执行权限，同组用户拥有读和执行权限，其他用户无权限。<br>3.2 设置登录超时<br>设置系统登录后，连接超时时间，增强安全性。<br>操作步骤<br>使用命令 vi /etc/profile 修改配置文件，将以 TMOUT= 开头的行注释，设置为TMOUT=180，即超时时间为三分钟。</li>
+<li>日志<br>4.1 syslogd日志<br>启用日志功能，并配置日志记录。<br>操作步骤<br>Linux系统默认启用以下类型日志：<br>系统日志（默认）/var/log/messages<br>cron日志（默认）/var/log/cron<br>安全日志（默认）/var/log/secure<br>4.2 记录所有用户的登录和操作日志<br>通过脚本代码实现记录所有用户的登录操作日志，防止出现安全事件后无据可查。<br>操作步骤<br>运行 [root@xxx /]# vim /etc/profile打开配置文件。<br>在配置文件中输入以下内容：<br>history<br>USER=<code>whoami</code><br>USER_IP=<code>who -u am i 2&gt;/dev/null| awk &#39;{print $NF}&#39;|sed -e &#39;s/[()]//g&#39;</code><br>if [ “$USER_IP” = “” ]; then<br>USER_IP=<code>hostname</code><br>fi<br>if [ ! -d /var/log/history ]; then<br>mkdir /var/log/history<br>chmod 777 /var/log/history<br>fi<br>if [ ! -d /var/log/history/${LOGNAME} ]; then<br>mkdir /var/log/history/${LOGNAME}<br>chmod 300 /var/log/history/${LOGNAME}<br>fi<br>export HISTSIZE=4096<br>DT=<code>date +&quot;%Y%m%d_%H:%M:%S&quot;</code><br>export HISTFILE=”/var/log/history/${LOGNAME}/${USER}@${USER_IP}_$DT”<br>chmod 600 /var/log/history/${LOGNAME}/<em>history</em> 2&gt;/dev/null<br>运行 [root@xxx /]# source /etc/profile 加载配置生效。<br>注意： /var/log/history 是记录日志的存放位置，可以自定义。</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/24/绕过CDN查找真实IP地址/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -876,7 +1009,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
