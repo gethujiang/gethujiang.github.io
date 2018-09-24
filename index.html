@@ -658,6 +658,12 @@
 <li>其他安全配置<br>7.1 防病毒管理<br>Windows系统需要安装防病毒软件。<br>7.2 设置屏幕保护密码和开启时间<br>设置从屏幕保护恢复时需要输入密码，并将屏幕保护自动开启时间设定为五分钟。<br>7.3 限制远程登录空闲断开时间<br>对于远程登录的帐户，设置不活动超过时间15分钟自动断开连接。<br>操作步骤<br>打开 控制面板 &gt; 管理工具 &gt; 本地安全策略，在 本地策略 &gt; 安全选项 中，设置 Microsoft网络服务器：暂停会话前所需的空闲时间数量 属性为15分钟。<br>7.4 操作系统补丁管理<br>安装最新的操作系统Hotfix补丁。安装补丁时，应先对服务器系统进行兼容性测试。</li>
 </ol>
 <p>tips:小技巧<br>net user ming$ ahhahah /add      姓名+$可以隐藏<br>内容管理系统（CMS）<br>php万能密码（’ or 1=1 –  , ‘ or 1=1 # 和‘ or 1=1 /*）<br>点击任何链接，URL地址均不变，又用框架隐藏真实地址了（韩国网站都这么干）</p>
+<p>内网提权常用命令<br>1.获取操作系统信息<br><strong><em>获取操作系统名称和版本<br>systeminfo | findstr /B /C:”OS 名称” /C:”OS 版本”
+</em></strong>识别系统体系结构<br>echo %PROCESSOR_ARCHITECTURE%<br>2.获取网络信息<br><strong><em>获取路由表信息<br>route print
+</em></strong>ARP缓存信息<br>ARP -a<br><strong><em>查看防火墙规则<br>显示所有动态入站规则:<br>      netsh advfirewall firewall show rule name=all dir=in type=dynamic<br>3.应用程序信息
+</em></strong>查看计划任务（chcp 437:英文编码）<br>schtasks /QUERY /fo LIST /v<br><strong><em>查看服务进程id<br>tasklist /SVC
+</em></strong>查看安装驱动<br>DRIVERQUERY<br><strong><em>查看安装程序和版本信息<br>wmic product list brief
+</em></strong>查看服务、进程和启动程序信息：<br>wmic service list brief<br>wmic process list brief<br>wmic startup list brief</p>
 
           
         
