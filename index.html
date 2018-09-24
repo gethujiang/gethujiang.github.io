@@ -297,6 +297,127 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/24/绕过CDN查找真实IP地址/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JS">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/js.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/24/绕过CDN查找真实IP地址/" itemprop="url">绕过CDN查找真实IP地址</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-24T20:49:22+08:00">
+                2018-09-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.查找分站的IP，许多主站使用CDN，分站不使用<br><strong>它的二级域名很有可能没有使用CDN，通过分站来确定真实IP
+</strong>二级域名IP不一定是真实IP，但是很有可能在一个C段内，对所有C段扫描开放80端口，访问<br>2.使用nslookup查询，大部分CDN供给商只针对国内市场，而对国外市场几乎是不做CDN，所以有很大的几率会直接解析到实在IP。<br>nslookup xxx.com 国外DNS服务器IP地址（冷门的dns）<br>3.ping xxx.com查询真实IP地址<br>CDN将<a href="http://www.xxx.com" target="_blank" rel="noopener">www.xxx.com</a> cname到CDN主服务器上，ping xxx.com通常是真实IP地址<br>4.看以前的解析记录<br>域名采用CDN以前使用的IP地址很有可能是CDN的真实IP地址<br>5.phpinfo<br>phpinfo中有<br>6.有的服务器本地有sendmail，注册后，发送邮件给注册者，查看邮件源代码可以得到真实IP<br>有的会有mailserver，和网站处于同一网段，访问80就可以得到真实IP<br>7.rss订阅，可以得到真实IP地址<br>RSS订阅是站点用来和其他站点之间共享内容的一种简易方式，即Really Simple Syndication（简易信息聚合）</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/16/安全工具/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -600,7 +721,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

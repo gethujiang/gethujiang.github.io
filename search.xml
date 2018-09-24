@@ -3,6 +3,15 @@
   
     
     <entry>
+      <title>绕过CDN查找真实IP地址</title>
+      <link href="/2018/09/24/%E7%BB%95%E8%BF%87CDN%E6%9F%A5%E6%89%BE%E7%9C%9F%E5%AE%9EIP%E5%9C%B0%E5%9D%80/"/>
+      <url>/2018/09/24/%E7%BB%95%E8%BF%87CDN%E6%9F%A5%E6%89%BE%E7%9C%9F%E5%AE%9EIP%E5%9C%B0%E5%9D%80/</url>
+      <content type="html"><![CDATA[<p>1.查找分站的IP，许多主站使用CDN，分站不使用<br><strong>它的二级域名很有可能没有使用CDN，通过分站来确定真实IP</strong>二级域名IP不一定是真实IP，但是很有可能在一个C段内，对所有C段扫描开放80端口，访问<br>2.使用nslookup查询，大部分CDN供给商只针对国内市场，而对国外市场几乎是不做CDN，所以有很大的几率会直接解析到实在IP。<br>nslookup xxx.com 国外DNS服务器IP地址（冷门的dns）<br>3.ping xxx.com查询真实IP地址<br>CDN将<a href="http://www.xxx.com" target="_blank" rel="noopener">www.xxx.com</a> cname到CDN主服务器上，ping xxx.com通常是真实IP地址<br>4.看以前的解析记录<br>域名采用CDN以前使用的IP地址很有可能是CDN的真实IP地址<br>5.phpinfo<br>phpinfo中有<br>6.有的服务器本地有sendmail，注册后，发送邮件给注册者，查看邮件源代码可以得到真实IP<br>有的会有mailserver，和网站处于同一网段，访问80就可以得到真实IP<br>7.rss订阅，可以得到真实IP地址<br>RSS订阅是站点用来和其他站点之间共享内容的一种简易方式，即Really Simple Syndication（简易信息聚合）</p>]]></content>
+      
+      
+    </entry>
+    
+    <entry>
       <title>安全工具</title>
       <link href="/2018/09/16/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7/"/>
       <url>/2018/09/16/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7/</url>
