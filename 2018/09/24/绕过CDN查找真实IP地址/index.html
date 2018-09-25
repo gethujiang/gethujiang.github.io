@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="1.查找分站的IP，许多主站使用CDN，分站不使用它的二级域名很有可能没有使用CDN，通过分站来确定真实IP 二级域名IP不一定是真实IP，但是很有可能在一个C段内，对所有C段扫描开放80端口，访问2.使用nslookup查询，大部分CDN供给商只针对国内市场，而对国外市场几乎是不做CDN，所以有很大的几率会直接解析到实在IP。nslookup xxx.com 国外DNS服务器IP地址（冷门的dn">
+<meta name="description" content="1.查找分站的IP，许多主站使用CDN，分站不使用它的二级域名很有可能没有使用CDN，通过分站来确定真实IP 二级域名IP不一定是真实IP，但是很有可能在一个C段内，对所有C段扫描开放80端口，访问example:fierce -dns baidu.com –threads 1002.使用nslookup查询，大部分CDN供给商只针对国内市场，而对国外市场几乎是不做CDN，所以有很大的几率会直接解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="绕过CDN查找真实IP地址">
 <meta property="og:url" content="http://yoursite.com/2018/09/24/绕过CDN查找真实IP地址/index.html">
 <meta property="og:site_name" content="JS的博客">
-<meta property="og:description" content="1.查找分站的IP，许多主站使用CDN，分站不使用它的二级域名很有可能没有使用CDN，通过分站来确定真实IP 二级域名IP不一定是真实IP，但是很有可能在一个C段内，对所有C段扫描开放80端口，访问2.使用nslookup查询，大部分CDN供给商只针对国内市场，而对国外市场几乎是不做CDN，所以有很大的几率会直接解析到实在IP。nslookup xxx.com 国外DNS服务器IP地址（冷门的dn">
+<meta property="og:description" content="1.查找分站的IP，许多主站使用CDN，分站不使用它的二级域名很有可能没有使用CDN，通过分站来确定真实IP 二级域名IP不一定是真实IP，但是很有可能在一个C段内，对所有C段扫描开放80端口，访问example:fierce -dns baidu.com –threads 1002.使用nslookup查询，大部分CDN供给商只针对国内市场，而对国外市场几乎是不做CDN，所以有很大的几率会直接解">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-24T13:28:21.740Z">
+<meta property="og:updated_time" content="2018-09-25T01:02:36.723Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="绕过CDN查找真实IP地址">
-<meta name="twitter:description" content="1.查找分站的IP，许多主站使用CDN，分站不使用它的二级域名很有可能没有使用CDN，通过分站来确定真实IP 二级域名IP不一定是真实IP，但是很有可能在一个C段内，对所有C段扫描开放80端口，访问2.使用nslookup查询，大部分CDN供给商只针对国内市场，而对国外市场几乎是不做CDN，所以有很大的几率会直接解析到实在IP。nslookup xxx.com 国外DNS服务器IP地址（冷门的dn">
+<meta name="twitter:description" content="1.查找分站的IP，许多主站使用CDN，分站不使用它的二级域名很有可能没有使用CDN，通过分站来确定真实IP 二级域名IP不一定是真实IP，但是很有可能在一个C段内，对所有C段扫描开放80端口，访问example:fierce -dns baidu.com –threads 1002.使用nslookup查询，大部分CDN供给商只针对国内市场，而对国外市场几乎是不做CDN，所以有很大的几率会直接解">
 
 
 
@@ -365,7 +365,8 @@
 
       
         <p>1.查找分站的IP，许多主站使用CDN，分站不使用<br><strong>它的二级域名很有可能没有使用CDN，通过分站来确定真实IP
-</strong>二级域名IP不一定是真实IP，但是很有可能在一个C段内，对所有C段扫描开放80端口，访问<br>2.使用nslookup查询，大部分CDN供给商只针对国内市场，而对国外市场几乎是不做CDN，所以有很大的几率会直接解析到实在IP。<br>nslookup xxx.com 国外DNS服务器IP地址（冷门的dns）<br>3.ping xxx.com查询真实IP地址<br>CDN将<a href="http://www.xxx.com" target="_blank" rel="noopener">www.xxx.com</a> cname到CDN主服务器上，ping xxx.com通常是真实IP地址<br>4.看以前的解析记录<br>域名采用CDN以前使用的IP地址很有可能是CDN的真实IP地址<br>5.phpinfo<br>phpinfo中有<br>6.有的服务器本地有sendmail，注册后，发送邮件给注册者，查看邮件源代码可以得到真实IP<br>有的会有mailserver，和网站处于同一网段，访问80就可以得到真实IP<br>7.rss订阅，可以得到真实IP地址<br>RSS订阅是站点用来和其他站点之间共享内容的一种简易方式，即Really Simple Syndication（简易信息聚合）</p>
+</strong>二级域名IP不一定是真实IP，但是很有可能在一个C段内，对所有C段扫描开放80端口，访问<br><strong>example:fierce -dns baidu.com –threads 100<br>2.使用nslookup查询，大部分CDN供给商只针对国内市场，而对国外市场几乎是不做CDN，所以有很大的几率会直接解析到实在IP。<br>nslookup xxx.com 国外DNS服务器IP地址（冷门的dns）<br>3.ping xxx.com查询真实IP地址<br>CDN将<a href="http://www.xxx.com" target="_blank" rel="noopener">www.xxx.com</a> cname到CDN主服务器上，ping xxx.com通常是真实IP地址<br>4.看以前的解析记录<br>域名采用CDN以前使用的IP地址很有可能是CDN的真实IP地址<br>5.phpinfo<br>phpinfo中有<br>6.有的服务器本地有sendmail，注册后，发送邮件给注册者，查看邮件源代码可以得到真实IP<br>有的会有mailserver，和网站处于同一网段，访问80就可以得到真实IP<br>7.rss订阅，可以得到真实IP地址<br>RSS订阅是站点用来和其他站点之间共享内容的一种简易方式，即Really Simple Syndication（简易信息聚合）<br>8.验证是否真实IP
+</strong>更改本地hosts文件，通过IP地址访问，看是否是该网站<br>**Windows的hosts文件在：C:\Windows\System32\drivers\etc目录下</p>
 
       
     </div>
@@ -474,7 +475,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -496,7 +497,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

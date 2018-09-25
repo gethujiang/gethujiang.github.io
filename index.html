@@ -297,6 +297,133 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/25/WAF绕过/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JS">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/js.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/25/WAF绕过/" itemprop="url">WAF绕过</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-25T09:05:31+08:00">
+                2018-09-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>WAF<br>Web应用防护系统（也称为：网站应用级入侵防御系统。英文：Web Application Firewall，简称： WAF）</p>
+<p>CDN<br>CDN的全称是Content Delivery Network，即内容分发网络。其目的是使用户可就近取得所需内容，解决 Internet网络拥挤的状况，提高用户访问网站的响应速度。</p>
+<p>文章来自：<br><a href="http://www.secpulse.com/archives/56523.html" target="_blank" rel="noopener">http://www.secpulse.com/archives/56523.html</a><br><a href="https://www.secpulse.com/archives/56495.html" target="_blank" rel="noopener">https://www.secpulse.com/archives/56495.html</a></p>
+<p>1.CDN WAF绕过<br>查询目标真实IP地址<br><strong>查询dns历史记录
+</strong>查询子域名（二级域名可能没有做CDN）<br><strong>通过冷门的国外DNS服务器可以解析到真实IP地址（nslookup baidu.com 8.8.8.8）<br>2.白名单应用（子域名）<br>没有将子域名添加到CDN节点，如果和目标服务器搭建在同一个服务器，可以使用WAF绕过<br>3.协议没有正确解析<br>0x01             HTTP不同的请求方法污染<br>1    GET            请求指定的页面信息，并返回实体主体。<br>2    HEAD        类似于GET请求，只不过返回的响应中没有具体的内容，用于获取报头<br>3    POST        向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST请求可能会导致新的资源的建立和/或已有资源的修改。<br>4    PUT            从客户端向服务器传送的数据取代指定的文档的内容。<br>5    DELETE        请求服务器删除指定的页面。<br>6    CONNECT        HTTP/1.1协议中预留给能够将连接改为管道方式的代理服务器。<br>7    OPTIONS        允许客户端查看服务器的性能。<br>8    TRACE        回显服务器收到的请求，主要用于测试或诊断。
+</strong>假设服务器只拦截GET/POST请求，那么根据Apache服务器的特性，发送其他请求只要脚本接收的是GET参数，那么也是可以传递参数值的。<br>0x02 GET与POST的区别<br><strong>Http定义了与服务器交互的不同方法，最基本的方法有4种，分别是GET，POST，PUT，DELETE。
+</strong>GET一般用于获取/查询资源信息，而POST一般用于更新资源信息。<br><strong>在请求的数据包中，POST比GET多了一个<br>Content-Type: application/x-www-form-urlencoded<br>这个是将提交数据变成url编码来传递给服务器，那么如此说来，也有的WAF会解析这行Content-Type去识别是否是POST注入，因为要防止方法污染。<br>0x03 文件上传
+</strong>Content-Type:multipart/form-data; 指代的是这个数据是来自表单提交的<br>某些WAF是通过Content-Type识别是否是文件上传数据包。假设我们将Content-Type更改，数据包也是正常提交过去的。<br>还有的时候就是Content-Disposition: form-data;，也有某些WAF是根据Content-Disposition匹配filename的，用于验证黑名单。我们经过混淆大小写也是可以bypass的<br>0x04 HTTP参数污染（HPP）<br>在HPP中最典型的的例子就是“双文件上传”。<br>就是在协议中，提交两个相同的值，达到欺骗WAF一次匹配的目的。在这里提点一下http协议中参数名与参数值的结构。<br>[参数名]=“参数值”;<br>[参数名]=“参数值”<br>[参数名]=参数值<br>[参数名]=参数值;<br>根据正规协议数据结构去构造数据包即可bypass</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/24/linux基础/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -502,7 +629,8 @@
         
           
             <p>1.查找分站的IP，许多主站使用CDN，分站不使用<br><strong>它的二级域名很有可能没有使用CDN，通过分站来确定真实IP
-</strong>二级域名IP不一定是真实IP，但是很有可能在一个C段内，对所有C段扫描开放80端口，访问<br>2.使用nslookup查询，大部分CDN供给商只针对国内市场，而对国外市场几乎是不做CDN，所以有很大的几率会直接解析到实在IP。<br>nslookup xxx.com 国外DNS服务器IP地址（冷门的dns）<br>3.ping xxx.com查询真实IP地址<br>CDN将<a href="http://www.xxx.com" target="_blank" rel="noopener">www.xxx.com</a> cname到CDN主服务器上，ping xxx.com通常是真实IP地址<br>4.看以前的解析记录<br>域名采用CDN以前使用的IP地址很有可能是CDN的真实IP地址<br>5.phpinfo<br>phpinfo中有<br>6.有的服务器本地有sendmail，注册后，发送邮件给注册者，查看邮件源代码可以得到真实IP<br>有的会有mailserver，和网站处于同一网段，访问80就可以得到真实IP<br>7.rss订阅，可以得到真实IP地址<br>RSS订阅是站点用来和其他站点之间共享内容的一种简易方式，即Really Simple Syndication（简易信息聚合）</p>
+</strong>二级域名IP不一定是真实IP，但是很有可能在一个C段内，对所有C段扫描开放80端口，访问<br><strong>example:fierce -dns baidu.com –threads 100<br>2.使用nslookup查询，大部分CDN供给商只针对国内市场，而对国外市场几乎是不做CDN，所以有很大的几率会直接解析到实在IP。<br>nslookup xxx.com 国外DNS服务器IP地址（冷门的dns）<br>3.ping xxx.com查询真实IP地址<br>CDN将<a href="http://www.xxx.com" target="_blank" rel="noopener">www.xxx.com</a> cname到CDN主服务器上，ping xxx.com通常是真实IP地址<br>4.看以前的解析记录<br>域名采用CDN以前使用的IP地址很有可能是CDN的真实IP地址<br>5.phpinfo<br>phpinfo中有<br>6.有的服务器本地有sendmail，注册后，发送邮件给注册者，查看邮件源代码可以得到真实IP<br>有的会有mailserver，和网站处于同一网段，访问80就可以得到真实IP<br>7.rss订阅，可以得到真实IP地址<br>RSS订阅是站点用来和其他站点之间共享内容的一种简易方式，即Really Simple Syndication（简易信息聚合）<br>8.验证是否真实IP
+</strong>更改本地hosts文件，通过IP地址访问，看是否是该网站<br>**Windows的hosts文件在：C:\Windows\System32\drivers\etc目录下</p>
 
           
         
@@ -1015,7 +1143,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1037,7 +1165,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="渗透测试," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="记录学习的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="JS的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/09/index.html">
+<meta name="description" content="WAFWeb应用防护系统（也称为：网站应用级入侵防御系统。英文：Web Application Firewall，简称： WAF） CDNCDN的全称是Content Delivery Network，即内容分发网络。其目的是使用户可就近取得所需内容，解决 Internet网络拥挤的状况，提高用户访问网站的响应速度。 文章来自：http://www.secpulse.com/archives/56">
+<meta name="keywords" content="渗透测试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WAF绕过">
+<meta property="og:url" content="http://yoursite.com/2018/09/25/WAF绕过/index.html">
 <meta property="og:site_name" content="JS的博客">
-<meta property="og:description" content="记录学习的博客">
+<meta property="og:description" content="WAFWeb应用防护系统（也称为：网站应用级入侵防御系统。英文：Web Application Firewall，简称： WAF） CDNCDN的全称是Content Delivery Network，即内容分发网络。其目的是使用户可就近取得所需内容，解决 Internet网络拥挤的状况，提高用户访问网站的响应速度。 文章来自：http://www.secpulse.com/archives/56">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-25T01:36:09.331Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS的博客">
-<meta name="twitter:description" content="记录学习的博客">
+<meta name="twitter:title" content="WAF绕过">
+<meta name="twitter:description" content="WAFWeb应用防护系统（也称为：网站应用级入侵防御系统。英文：Web Application Firewall，简称： WAF） CDNCDN的全称是Content Delivery Network，即内容分发网络。其目的是使用户可就近取得所需内容，解决 Internet网络拥挤的状况，提高用户访问网站的响应速度。 文章来自：http://www.secpulse.com/archives/56">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/09/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/25/WAF绕过/"/>
 
 
 
 
 
-  <title>归档 | JS的博客</title>
+  <title>WAF绕过 | JS的博客</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-right page-archive">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 	<a href="https://github.com/gethujiang"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a>
 
@@ -282,222 +284,154 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/25/WAF绕过/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JS">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/js.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">WAF绕过</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-25T09:05:31+08:00">
+                2018-09-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 6 篇日志。 继续努力。
-      </span>
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/25/WAF绕过/" itemprop="url">
-              
-                <span itemprop="name">WAF绕过</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-25T09:05:31+08:00"
-              content="2018-09-25" >
-          09-25
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+        </div>
+      </header>
+    
 
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/24/linux基础/" itemprop="url">
-              
-                <span itemprop="name">linux基础</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-24T21:34:06+08:00"
-              content="2018-09-24" >
-          09-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/24/绕过CDN查找真实IP地址/" itemprop="url">
-              
-                <span itemprop="name">绕过CDN查找真实IP地址</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-24T21:27:23+08:00"
-              content="2018-09-24" >
-          09-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>WAF<br>Web应用防护系统（也称为：网站应用级入侵防御系统。英文：Web Application Firewall，简称： WAF）</p>
+<p>CDN<br>CDN的全称是Content Delivery Network，即内容分发网络。其目的是使用户可就近取得所需内容，解决 Internet网络拥挤的状况，提高用户访问网站的响应速度。</p>
+<p>文章来自：<br><a href="http://www.secpulse.com/archives/56523.html" target="_blank" rel="noopener">http://www.secpulse.com/archives/56523.html</a><br><a href="https://www.secpulse.com/archives/56495.html" target="_blank" rel="noopener">https://www.secpulse.com/archives/56495.html</a></p>
+<p>1.CDN WAF绕过<br>查询目标真实IP地址<br><strong>查询dns历史记录
+</strong>查询子域名（二级域名可能没有做CDN）<br><strong>通过冷门的国外DNS服务器可以解析到真实IP地址（nslookup baidu.com 8.8.8.8）<br>2.白名单应用（子域名）<br>没有将子域名添加到CDN节点，如果和目标服务器搭建在同一个服务器，可以使用WAF绕过<br>3.协议没有正确解析<br>0x01             HTTP不同的请求方法污染<br>1    GET            请求指定的页面信息，并返回实体主体。<br>2    HEAD        类似于GET请求，只不过返回的响应中没有具体的内容，用于获取报头<br>3    POST        向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST请求可能会导致新的资源的建立和/或已有资源的修改。<br>4    PUT            从客户端向服务器传送的数据取代指定的文档的内容。<br>5    DELETE        请求服务器删除指定的页面。<br>6    CONNECT        HTTP/1.1协议中预留给能够将连接改为管道方式的代理服务器。<br>7    OPTIONS        允许客户端查看服务器的性能。<br>8    TRACE        回显服务器收到的请求，主要用于测试或诊断。
+</strong>假设服务器只拦截GET/POST请求，那么根据Apache服务器的特性，发送其他请求只要脚本接收的是GET参数，那么也是可以传递参数值的。<br>0x02 GET与POST的区别<br><strong>Http定义了与服务器交互的不同方法，最基本的方法有4种，分别是GET，POST，PUT，DELETE。
+</strong>GET一般用于获取/查询资源信息，而POST一般用于更新资源信息。<br><strong>在请求的数据包中，POST比GET多了一个<br>Content-Type: application/x-www-form-urlencoded<br>这个是将提交数据变成url编码来传递给服务器，那么如此说来，也有的WAF会解析这行Content-Type去识别是否是POST注入，因为要防止方法污染。<br>0x03 文件上传
+</strong>Content-Type:multipart/form-data; 指代的是这个数据是来自表单提交的<br>某些WAF是通过Content-Type识别是否是文件上传数据包。假设我们将Content-Type更改，数据包也是正常提交过去的。<br>还有的时候就是Content-Disposition: form-data;，也有某些WAF是根据Content-Disposition匹配filename的，用于验证黑名单。我们经过混淆大小写也是可以bypass的<br>0x04 HTTP参数污染（HPP）<br>在HPP中最典型的的例子就是“双文件上传”。<br>就是在协议中，提交两个相同的值，达到欺骗WAF一次匹配的目的。在这里提点一下http协议中参数名与参数值的结构。<br>[参数名]=“参数值”;<br>[参数名]=“参数值”<br>[参数名]=参数值<br>[参数名]=参数值;<br>根据正规协议数据结构去构造数据包即可bypass</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/21/Windows基础/" itemprop="url">
-              
-                <span itemprop="name">未命名</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-21T16:02:09+08:00"
-              content="2018-09-21" >
-          09-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/16/安全工具/" itemprop="url">
-              
-                <span itemprop="name">安全工具</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-16T09:58:56+08:00"
-              content="2018-09-16" >
-          09-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/渗透测试/" rel="tag"># 渗透测试</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/24/linux基础/" rel="next" title="linux基础">
+                <i class="fa fa-chevron-left"></i> linux基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -505,6 +439,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -735,6 +673,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
