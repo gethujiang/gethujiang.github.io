@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="nmap1.主机发现-SP：扫描存活主机nmap -SP 192.168.1.0/242.扫描方式-sA:tcp ack 三次握手扫描-sS:tcp syn 半开放扫描-sS/sT/sA/sW/sM: TCP SYN/Connect()/ACK/Window/Maimon scans-sU: UDP Scan-sN/sF/sX: TCP Null, FIN, and Xmas scans-p:指定">
+<meta name="description" content="nmap1.主机发现-SP：扫描存活主机nmap -SP 192.168.1.0/242.扫描方式-sA:tcp ack 三次握手扫描-sS:tcp syn 半开放扫描,Nmap命令中没有指出扫描类型,默认的就是Tcp SYN.但是它需要root/administrator权限.-sS/sT/sA/sW/sM: TCP SYN/Connect()/ACK/Window/Maimon scans-s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="安全工具">
 <meta property="og:url" content="http://yoursite.com/2018/09/16/安全工具/index.html">
 <meta property="og:site_name" content="JS的博客">
-<meta property="og:description" content="nmap1.主机发现-SP：扫描存活主机nmap -SP 192.168.1.0/242.扫描方式-sA:tcp ack 三次握手扫描-sS:tcp syn 半开放扫描-sS/sT/sA/sW/sM: TCP SYN/Connect()/ACK/Window/Maimon scans-sU: UDP Scan-sN/sF/sX: TCP Null, FIN, and Xmas scans-p:指定">
+<meta property="og:description" content="nmap1.主机发现-SP：扫描存活主机nmap -SP 192.168.1.0/242.扫描方式-sA:tcp ack 三次握手扫描-sS:tcp syn 半开放扫描,Nmap命令中没有指出扫描类型,默认的就是Tcp SYN.但是它需要root/administrator权限.-sS/sT/sA/sW/sM: TCP SYN/Connect()/ACK/Window/Maimon scans-s">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-16T02:27:07.434Z">
+<meta property="og:updated_time" content="2018-09-25T07:26:19.275Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="安全工具">
-<meta name="twitter:description" content="nmap1.主机发现-SP：扫描存活主机nmap -SP 192.168.1.0/242.扫描方式-sA:tcp ack 三次握手扫描-sS:tcp syn 半开放扫描-sS/sT/sA/sW/sM: TCP SYN/Connect()/ACK/Window/Maimon scans-sU: UDP Scan-sN/sF/sX: TCP Null, FIN, and Xmas scans-p:指定">
+<meta name="twitter:description" content="nmap1.主机发现-SP：扫描存活主机nmap -SP 192.168.1.0/242.扫描方式-sA:tcp ack 三次握手扫描-sS:tcp syn 半开放扫描,Nmap命令中没有指出扫描类型,默认的就是Tcp SYN.但是它需要root/administrator权限.-sS/sT/sA/sW/sM: TCP SYN/Connect()/ACK/Window/Maimon scans-s">
 
 
 
@@ -364,7 +364,7 @@
       
 
       
-        <p>nmap<br>1.主机发现<br>-SP：扫描存活主机<br>nmap -SP 192.168.1.0/24<br>2.扫描方式<br>-sA:tcp ack 三次握手扫描<br>-sS:tcp syn 半开放扫描<br>-sS/sT/sA/sW/sM: TCP SYN/Connect()/ACK/Window/Maimon scans<br>-sU: UDP Scan<br>-sN/sF/sX: TCP Null, FIN, and Xmas scans<br>-p:指定端口扫描<br>-p-：扫描全部端口<br>3.操作系统识别<br>-O：操作系统识别<br>-A：详细识别<br>4.其他扫描<br>-v：详细输出<br>-V：输出版本信息</p>
+        <p>nmap<br>1.主机发现<br>-SP：扫描存活主机<br>nmap -SP 192.168.1.0/24<br>2.扫描方式<br>-sA:tcp ack 三次握手扫描<br>-sS:tcp syn 半开放扫描,Nmap命令中没有指出扫描类型,默认的就是Tcp SYN.但是它需要root/administrator权限.<br>-sS/sT/sA/sW/sM: TCP SYN/Connect()/ACK/Window/Maimon scans<br>-sU: UDP Scan<br>-sN/sF/sX: TCP Null, FIN, and Xmas scans<br>-p:指定端口扫描<br>-p-：扫描全部端口<br>-sT:Tcp connect()扫描技术只适用于找出TCP和UDP端口<br>3.操作系统识别<br>-O：操作系统识别<br>-A：详细识别<br>4.其他扫描<br>-v：详细输出<br>-V：输出版本信息<br>5.使用例子<br>//扫描单一主机<br>nmap <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a><br>nmap 192.168.1.1<br>//扫描整个子网<br>nmap 192.168.1.1/24<br>//扫描多个目标<br>nmap 192.168.1.1 192.168.1.8<br>//扫描某一个范围<br>nmap 192.168.1.6-88<br>//扫描文件中的IP地址<br>nmap -iL target-ip.txt<br>//扫描除过某一个ip外的所有子网主机<br>nmap 192.168.1.1/24 -exclude 192.168.1.88<br>//扫描特定主机的端口<br>nmap -p 80,23,21,22,8080 192.168.1.1<br>//tcp syn 扫描<br>nmap -sS 192.168.1.105<br>//UDP端口扫描<br>nmap -sU 192.168.1.1<br>//FIN scan (sF)扫描 ，不需要完成三次握手<br>nmap -sF 192.168.1.105<br>//PING Scan (sP)，找出网络中存活的主机<br>nmap -sP 192.168.1.0/24<br>//版本检测，-sV<br>nmap -sV 192.168.1.1<br>//Idle scan (sL)<br>Idle scan是一种先进的扫描技术，它不是用你真实的主机Ip发送数据包，而是使用另外一个目标网络的主机发送数据包.<br>nmap -sL 192.168.1.6 192.168.1.1(1.6网络中主机，1.1需要扫描的主机）<br>//操作系统探测，-O：操作系统识别<br>nmap -O 192.168.1.1<br>//如果远程主机有防火墙，IDS和IPS系统，你可以使用-PN命令来确保不ping远程主机，因为有时候防火墙会组织掉ping请求.-PN命令告诉Nmap不用ping远程主机。<br>nmap -O -PN 192.168.1.1/24<br>//–-osscan-guess 猜测认为最接近目标的匹配操作系统类型。<br>nmap -O –osscan-guess 192.168.1.1</p>
 <p>sqlmap<br>  sqlmap基础<br>1.sqlmap安装<br>    Windows系统<br><strong>环境<br>python 2.7版本（默认next，记住添加环境变量）
 </strong>sqlmap源码下载<br>2.sqlmap使用<br>-u：测试url<br>–dbs：列出使用数据库名称<br>–tables：列出数据库中表名称<br>-–columns 枚举DBMS数据库表列<br>-D DB 指定进行枚举的数据库名<br>-T TBL 要指定操作的数据库表名称<br>-C COL 要进行枚举的数据库列<br>–dump 转储数据库中的表数据<br>–dump-all 转储所有的数据库表中的数据<br>–data=DATA 通过POST发送的数据字符串<br>–batch 自动选yes<br>–smart 启发式快速判断<br>-l LIST 从Burp或WebScarab代理的日志中解析目标。<br>-g GOOGLEDORK 处理Google dork的结果作为目标URL。<br>–current-db：获取当前数据库</p>
 <p>burpsuite<br>1.proxy<br>设置代理，并接口为on开始拦截HTTP请求<br>2.intruder（入侵者）</p>

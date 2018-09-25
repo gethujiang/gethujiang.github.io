@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="JS的博客">
 <meta property="og:description" content="Linux基础1）Linux系统信息1.Linux的特点　　Linux操作系统是一个免费、自由、开放的操作系统，它拥有如下一些特点：完全免费、高效安全稳定、支持多种硬件平台、友好的用户界面、强大的网络功能、支持多任务、多用户。　　Linux的体系结构　　Linux操作系统一般由以下3个主要部分组成： 内核（Kernel）、命令解释层（Shell或其他操作环境）、实用工具2.Linux的内核　　系统">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-24T13:34:28.147Z">
+<meta property="og:updated_time" content="2018-09-25T03:12:32.787Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux基础">
 <meta name="twitter:description" content="Linux基础1）Linux系统信息1.Linux的特点　　Linux操作系统是一个免费、自由、开放的操作系统，它拥有如下一些特点：完全免费、高效安全稳定、支持多种硬件平台、友好的用户界面、强大的网络功能、支持多任务、多用户。　　Linux的体系结构　　Linux操作系统一般由以下3个主要部分组成： 内核（Kernel）、命令解释层（Shell或其他操作环境）、实用工具2.Linux的内核　　系统">
@@ -378,6 +378,10 @@
 <li>文件系统<br>3.1 设置umask值<br>设置默认的umask值，增强安全性。<br>操作步骤<br>使用命令 vi /etc/profile 修改配置文件，添加行 umask 027， 即新创建的文件属主拥有读写执行权限，同组用户拥有读和执行权限，其他用户无权限。<br>3.2 设置登录超时<br>设置系统登录后，连接超时时间，增强安全性。<br>操作步骤<br>使用命令 vi /etc/profile 修改配置文件，将以 TMOUT= 开头的行注释，设置为TMOUT=180，即超时时间为三分钟。</li>
 <li>日志<br>4.1 syslogd日志<br>启用日志功能，并配置日志记录。<br>操作步骤<br>Linux系统默认启用以下类型日志：<br>系统日志（默认）/var/log/messages<br>cron日志（默认）/var/log/cron<br>安全日志（默认）/var/log/secure<br>4.2 记录所有用户的登录和操作日志<br>通过脚本代码实现记录所有用户的登录操作日志，防止出现安全事件后无据可查。<br>操作步骤<br>运行 [root@xxx /]# vim /etc/profile打开配置文件。<br>在配置文件中输入以下内容：<br>history<br>USER=<code>whoami</code><br>USER_IP=<code>who -u am i 2&gt;/dev/null| awk &#39;{print $NF}&#39;|sed -e &#39;s/[()]//g&#39;</code><br>if [ “$USER_IP” = “” ]; then<br>USER_IP=<code>hostname</code><br>fi<br>if [ ! -d /var/log/history ]; then<br>mkdir /var/log/history<br>chmod 777 /var/log/history<br>fi<br>if [ ! -d /var/log/history/${LOGNAME} ]; then<br>mkdir /var/log/history/${LOGNAME}<br>chmod 300 /var/log/history/${LOGNAME}<br>fi<br>export HISTSIZE=4096<br>DT=<code>date +&quot;%Y%m%d_%H:%M:%S&quot;</code><br>export HISTFILE=”/var/log/history/${LOGNAME}/${USER}@${USER_IP}_$DT”<br>chmod 600 /var/log/history/${LOGNAME}/<em>history</em> 2&gt;/dev/null<br>运行 [root@xxx /]# source /etc/profile 加载配置生效。<br>注意： /var/log/history 是记录日志的存放位置，可以自定义。</li>
 </ol>
+<p>lsof<br>查看进程打开那些文件或者查看文件给那个进程使用<br>-u:列出某个用户所打开的文件信息<br>-c:列出某个程序所打开的文件信息<br>-p：更具进程号显示该进程打开的文件信息<br>-i：列出网络连接<br>lsof -c mysql<br>lsof -u root<br>lsof -p 1<br>ls -i udp:列出udp网络连接信息<br>lsof -i :3306 ：列出谁在使用某个端口</p>
+<p>设置eth0的IP地址，子网掩码，mtu<br>ipconfig eth0 192.168.1.2 netmask 255.255.255.0 broadcast 192.168.1.255 mtu 1024</p>
+<p>删除文件大小为0的文件<br>find . -size 0 -delete<br>find  -size 0 -delete</p>
+<p>找出系统中所有.c和.h文件<br>find -name ‘<em>.[ch]’<br>find -name ‘</em>.[ch]’ -o -name <em>.php<br>find -name </em>.c -o -name *.h</p>
 
       
     </div>
