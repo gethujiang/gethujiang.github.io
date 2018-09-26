@@ -297,6 +297,131 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/26/windows防火墙/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JS">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/js.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/26/windows防火墙/" itemprop="url">windows防火墙</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-26T18:30:59+08:00">
+                2018-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Windows防火墙<br>–防火墙的作用是用来检查网络或Internet的交互信息，并根据一定的规则设置阻止或许可这些信息包通过，从而实现保护计算机的目的</p>
+<p>防火墙类型<br>–软件<br>–硬件</p>
+<p>设置Windows防火墙<br>–控制面板（control）\系统和安全\Windows Defender 防火墙<br>–还原默认设置，Windows会删除所有的网络防火墙配置项目，恢复到初始状态<br>–允许程序规则配置，设置允许程序列表或基本服务</p>
+<p>高级安全Windows 防火墙MMC<br>1、导入和导出策略<br>导入和导出策略是用来通过策略文件（*.wfw）进行配置保存或共享部署之用，导出功能既可以作为当前设置的备份也可以共享给其它计算机进行批量部署之用。<br>2、还原默认策略<br>恢复到原来的策略<br>3、诊断/修复<br>诊断和修复功能是用来诊断和修复Internet连接用的</p>
+<p>高级安全Windows防火墙属性设置<br>防火墙属性设置里，总体分成四大块，这个四种配置类型都是独立配置独立生效的。<br>–域配置文件<br>域配置文件主要是面向企业域连接使用，普通用户也可以把它关闭掉。<br>–专用配置文件<br>专用配置文件是面向家庭网络和工作网络配置使用，大家最常使用。<br>–公用配置文件<br>公用配置文件是面向公用网络配置使用，如果在酒店、机场等公共场合时可能需要使用。<br>–IPSec设置<br>IPSec设置是面向VPN等需要进行安全连接时使用<br>1、专用配置文件<br>A、防火墙的状态，有启用（推荐）和关闭两个选项，可以在这里进行设置<br>B、入站连接，有阻止（默认值）、阻止所有连接和允许<br>C、出站连接，有阻止和允许（默认值）两个选项，对于个人计算机还是需要访问网络的就选择默认值即可。<br>2、IPSec设置<br>A、IPSec默认值<br>可以配置IPSec用来帮助保护网络流量的密钥交换、数据保护和身份验证方法。<br>B、IPSec免除<br>此选项设置确定包含Internet 控制消息协议 (ICMP) 消息的流量包是否受到IPsec保护，ICMP通常由网络疑难解答工具和过程使用<br>C、IPSec隧道授权<br>只在以下情况下使用此选项，具有创建从远程计算机到本地计算机的 IPsec 隧道模式连接的连接安全规则，并希望指定用户和计算机，以允许或拒绝其通过隧道访问本地计算机。选择“高级”，然后单击“自定义”可以显示“自定义 IPsec 隧道授权”对话框，可以为需要授权的计算机或用户进行隧道规则授权。</p>
+<p>高级安全Windows防火墙导航树<br>–规则标准只有三个：允许、条件允许和阻止，条件允许是指只允许使用IPSec保护下的连接通过。<br>一、如何禁用或启用规则<br>方法：只需要在需要禁用或启动的规则上，鼠标右键选择启用或禁止规则即可，或点击右侧的操作栏进行规则启用或禁止。<br>二、入站规则和出站规则<br>在Windows防火墙的“允许程序或功能通过Windows防火墙”中每增加或减少一个设置项，都会反应到入站或出站规则中来，这些规则从整体上看可以分成两个部分，一是用户规则，比如我们手动增加的允许程序规则就属于用户规则，还有一些系统预定义规则，预定义规则大部分都是系统已经预先设置好的，而且很多设置都是不允许修改的，<br>三、连接安全规则<br>连接安全包括在两台计算机开始通信之前对他们进行身份验证，并确保在两台计算机之间发送的信息的安全性。高级安全Windows防火墙使用IPsec实现连接安全，方式是通过使用密钥、身份验证、数据完整性和数据加密等措施。要创建一个安全规则只需要点击连接安全规则，然后在中间的窗口中鼠标右键，选择新建规则，</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/25/WAF绕过/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -513,6 +638,7 @@
 <p>设置eth0的IP地址，子网掩码，mtu<br>ipconfig eth0 192.168.1.2 netmask 255.255.255.0 broadcast 192.168.1.255 mtu 1024</p>
 <p>删除文件大小为0的文件<br>find . -size 0 -delete<br>find  -size 0 -delete</p>
 <p>找出系统中所有.c和.h文件<br>find -name ‘<em>.[ch]’<br>find -name ‘</em>.[ch]’ -o -name <em>.php<br>find -name </em>.c -o -name *.h</p>
+<p>ls列出文件的颜色代表<br>白色：表示普通文件<br>蓝色：表示目录<br>绿色：表示可执行文件<br>红色：表示压缩文件<br>浅蓝色：链接文件<br>红色闪烁：表示链接的文件有问题<br>黄色：表示设备文件<br>灰色：表示其它文件 </p>
 
           
         
@@ -1144,7 +1270,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1166,7 +1292,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
